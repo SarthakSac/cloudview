@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>weather app</title>
+    <style>
+        body{
+            /*background-image: url(./33932.jpg);*/
+            background-repeat: no-repeat;
+            background-size: cover;
+            --primary-dark: rgba(55, 65, 81, 1);
+            --text-light:  #f3f4f6;
+           /* --secondary-dark: rgba(55, 65, 81, 0.7);
+            --bg-light: rgba(243, 244, 246,0.3);
+           --bg-btn: rgba(67, 56, 202, 0.8);
+            background-color: var(--text-light);*/
+        }
+        body.dark{
+           --text-light: rgba(55, 65, 81, 1);
+           --primary-dark:#f3f4f6;
+           /*--secondary-dark: rgba(243, 244, 246,0.3);
+           --bg-btn: rgba(219, 233, 29, 0.897);
+           --bg-light: rgba(45, 49, 54, 0.5);*/
+        }
+        input[type="checkbox"]{
+    -webkit-appearance: none;
+    position: relative;
+    width: 80px;
+    height: 40px;
+    border-radius: 50px;
+    outline: none;
+    background-image: url(https://i.postimg.cc/857jHw2q/Screenshot-2020-04-16-at-1-07-06-PM.png);
+    background-size: cover;
+}
+
+input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background-color: var(--primary-dark);
+    border-radius: 50px;
+}
+
+input[type="checkbox"]:checked:before{
+    transform: translate(100%);
+}
+
+input[type="checkbox"]:checked{
+    background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png);
+}
+
+    </style>
+</head>
+
+<body>
+    
+    <div class="container text-light">
+     <div class="container text-light">
+          
+          
+          <input type="checkbox" id="mode" style="margin-left: 100%;">
+            <div class="input-group my-2">
+                <input type="search" class="form-control rounded " style="background-color: var(--primary-dark);" placeholder="Search"
+                    aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary" style="margin-left: 1%; border-radius: 50px;background-color: var(--primary-dark)">search</button>
+                
+            </div>
+           <div class="row">
+            <div class="col-md-4"> <div class="card" style=" width: 18rem;background-color: var(--primary-dark); ">
+              <div class="row">
+              <div class="col-6 ">
+                  <h5 class="card-title">Ghaziabad</h5>
+                  <img src="pngwing.com.png" alt="" height="50px">
+                  <P>
+                  <h1 id="x1" style="font-size: 45px;">18°C </h1> 
+                  <div style="margin-left: 4%;" class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" onclick="card1()" class="btn btn-primary">F</button>
+                    <button type="button" onclick="cel()" class="btn btn-primary">C</button>
+                   
+                  </div>
+                  </P>
+              </div>
+              
+              <div class="col-md-6">
+                  <div  class="d-flex" style="margin-top:50%"> Details<br>
+                      Feels like: 18°C<br>
+                     Wind:  5.56 m/s <br>
+                     Humidity: 41% <br>
+                      Pressure: 999 hPa <br>
+                  </div> 
+              </div>
+
+          </div>
+          </div></div>
+            <div class="col-md-4"> <div class="card " style=" width: 18rem;  background-color: var(--primary-dark) ">
+              <div class="row">
+              <div class="col-6 ">
+                  <h5 class="card-title">Chennai</h5>
+                  <img src="pngwing.com.png" alt="" height="50px">
+                  <p>
+                  <h1 id="x2"style="font-size: 45px;">15°C</h1>
+                  <div  style="margin-left: 4%;" class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" onclick="card2()" class="btn btn-primary">F</button>
+                    <button type="button" onclick="cel1()" class="btn btn-primary">C</button>
+                   
+                  </div>
+                  </p>
+              </div>
+              
+              <div class="col-md-6">
+                  <div  class="d-flex" style="margin-top:50%"> Details<br>
+                      Feels like: 15°C<br>
+                     Wind:  5.56 m/s <br>
+                     Humidity: 41% <br>
+                      Pressure: 999 hPa <br>
+                  </div> 
+              </div>
+
+          </div>
+          </div></div>
+            <div class="col-md-4"> <div class="card " style=" width: 18rem;  background-color: var(--primary-dark)">
+              <div class="row">
+              <div class="col-6 ">
+                  <h5 class="card-title">Noida</h5>
+                  <img src="pngwing.com.png" alt="" height="50px">
+                  <p>
+                  <h1 id="x3" style="font-size: 45px;">22°C </h1>
+                  <div style="margin-left: 4%;" class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" onclick="card3()" class="btn btn-primary">F</button>
+                    <button type="button" onclick="cel2()" class="btn btn-primary">C</button>
+                   
+                  </div>
+                  </p>
+              </div>
+              
+              <div class="col-md-6">
+                  <div  class="d-flex" style="margin-top:50%"> Details<br>
+                      Feels like: 22°C<br>
+                     Wind:  5.56 m/s <br>
+                     Humidity: 41% <br>
+                      Pressure: 999 hPa <br>
+                  </div> 
+              </div>
+
+          </div>
+          </div></div>
+           </div>
+
+        
+            <div class="accordion " id="accordionExample">
+                <div class="accordion-item my-2 primary-dark">
+                  <h2 class="accordion-header primary-dark" id="headingOne">
+                    <button class="accordion-button collapsed " style="background-color: var(--primary-dark)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Monday
+                      <div style="margin-left:68%" >overcast clouds 32°C/32°C</div>
+                               
+                                
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color: var(--primary-dark)">
+                        pressure : 99 <br>
+                        clouds : 87% <br>
+                        Sea level 999m<br>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item my-2 primary-dark">
+                  <h2 class="accordion-header primary-dark" id="headingTwo">
+                    <button class="accordion-button collapsed  " style="background-color: var(--primary-dark)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Tuesday
+                      <div style="margin-left: 68% ; " >overcast clouds 32°C/32°C</div>
+                     
+                      
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color: var(--primary-dark)">
+                        pressure : 99 <br>
+                        clouds : 87% <br>
+                        Sea level 999m<br>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item my-2 primary-dark">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed " style="background-color: var(--primary-dark)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Wednesday
+                      <div style="margin-left: 66% ; " >overcast clouds 32°C/32°C</div>
+                      
+                      
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse " aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color: var(--primary-dark)">
+                        pressure : 99 <br>
+                        clouds : 87% <br>
+                        Sea level 999m<br>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item my-2 primary-dark">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed " style="background-color: var(--primary-dark)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Thurday
+                      <div style="margin-left: 68% ; " >overcast clouds 32°C/32°C</div>
+                      
+                      <div>
+                    </button>
+                  </h2>
+                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color: var(--primary-dark)">
+                        pressure : 99 <br>
+                        clouds : 87% <br>
+                        Sea level 999m<br>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item my-2 primary-dark">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed " style="background-color: var(--primary-dark)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                      Friday
+                      <div style="margin-left: 69% ; " >overcast clouds 32°C/32°C</div>
+                      
+                      
+                    </button>
+                  </h2>
+                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color: var(--primary-dark)">
+                        pressure : 99 <br>
+                        clouds : 87% <br>
+                        Sea level 999m<br>
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item primary-dark">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed " style="background-color: var(--primary-dark)" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                      Saturday
+                      <div style="margin-left: 67% ; " >overcast clouds 32°C/32°C</div>
+                     
+                    </button>
+                  </h2>
+                  <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body" style="background-color: var(--primary-dark)">
+                        pressure : 99 <br>
+                        clouds : 87% <br>
+                        Sea level 999m<br>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="container mt-4">
+            <h5 style="color: var(--text-light); background-color: var(--primary-dark)">Search According to date</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="startDate">Start Date:</label>
+                    <input type="text" class="form-control" id="startDate" name="startDate"
+                        placeholder="Select start date" autocomplete="off">
+                </div>
+                <div class="col-md-4">
+                    <label for="endDate">End Date:</label>
+                    <input type="text" class="form-control" id="endDate" name="endDate" placeholder="Select end date"
+                        autocomplete="off">
+                </div>
+                <div class="col-md-4" style="margin-top: 2%;">
+                  <button onclick="ready()"  class="btn btn-outline-primary" style="margin-left: 1%; border-radius: 50px;background-color: var(--primary-dark)">search</button>
+            
+                </div >
+                <div class="col-md-2" style="margin-left: 90%;">
+
+                  <p id="datetime" style="color: var(--text-light); background-color: var(--primary-dark)"></p>
+                  
+                </div>
+            </div>
+        </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+crossorigin="anonymous"></script>
+
+<script>
+
+ /*$(document).ready(function () 
+    // Datepicker options
+  { var options = {
+       format: 'yyyy-mm-dd', // Date format
+        autoclose: true,      // Close the datepicker when a date is selected
+   };
+
+    // Initialize the start datepicker
+    $('#startDate').datepicker(options);
+
+   // Initialize the end datepicker
+    $('#endDate').datepicker(options);
+    
+ });*/
+
+
+ let toggle = document.getElementById("mode");
+
+toggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+});
+
+function card1(){
+  
+  console.log("hello");
+  const temp=document.getElementById("x1").innerHTML;
+  console.log("hello",temp);
+
+  const myarr=temp.split("°");
+ 
+  let a=myarr[0];
+
+  let far=a*1.8+32;
+  document.getElementById('x1').innerHTML=far+"°F";
+ 
+}; function cel(){
+const update=document.getElementById('x1').innerHTML;
+console.log(update);
+const upcel=update.split("°");
+console.log(upcel);
+let index1=upcel[0];
+
+let celcius=Math.round((index1-32)/1.8);
+console.log(celcius);
+document.getElementById('x1').innerHTML=celcius+"°C";
+};
+function card2(){
+  
+  console.log("hello");
+  const temp=document.getElementById("x2").innerHTML;
+  console.log("hello",temp);
+
+  const myarr=temp.split("°");
+ 
+  let a=myarr[0];
+
+  let far=a*1.8+32;
+  document.getElementById('x2').innerHTML=far+"°F";
+ 
+}; function cel1(){
+const update=document.getElementById('x2').innerHTML;
+console.log(update);
+const upcel=update.split("°");
+console.log(upcel);
+let index1=upcel[0];
+
+let celcius=Math.round((index1-32)/1.8);
+console.log(celcius);
+document.getElementById('x2').innerHTML=celcius+"°C";
+};
+function card3(){
+  
+  console.log("hello");
+  const temp=document.getElementById("x3").innerHTML;
+  console.log("hello",temp);
+
+  const myarr=temp.split("°");
+ 
+  let a=myarr[0];
+
+  let far=a*1.8+32;
+  document.getElementById('x3').innerHTML=far+"°F";
+ 
+}; function cel2(){
+const update=document.getElementById('x3').innerHTML;
+console.log(update);
+const upcel=update.split("°");
+console.log(upcel);
+let index1=upcel[0];
+
+let celcius=Math.round((index1-32)/1.8);
+console.log(celcius);
+document.getElementById('x3').innerHTML=celcius+"°C";
+};
+  
+
+function updateDateTime() {
+  const currentDate = new Date();
+
+  
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1; // Months are 0-based, so we add 1
+  const day = currentDate.getDate();
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+
+  // Create a formatted string to display the current date and time
+  const formattedDate = `${year}-${month}-${day}`;
+  const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+  // Display the current date and time
+  const datetimeElement = document.getElementById('datetime');
+  datetimeElement.innerHTML = `Current Date: ${formattedDate}<br>Current Time: ${formattedTime}`;
+}
+
+
+setInterval(updateDateTime, 1000);
+
+
+
+</script>
+</body>
+
+</html>
